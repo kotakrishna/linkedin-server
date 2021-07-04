@@ -23,14 +23,10 @@ app.use(require("body-parser").urlencoded({ extended: false }));
 const options = { useNewUrlParser: true, useUnifiedTopology: true };
 mongoose_1.default.set("useFindAndModify", false);
 app.use(index_1.default);
-if (process.env.NODE_ENV == "production") {
-    app.use(express_1.default.static("../../../frontend/build"));
-}
 mongoose_1.default
     .connect(URI, options)
     .then(() => app.listen(PORT, () => console.log(`server lets see hosted on ${PORT}`)))
     .catch((err) => {
-    console.log(process.env.MONGODB_URI, process.env.AWS_ACCESS_KEY_ID, process.env.AWS_SECRET_ACCESS_KEY, process.env.NODE_ENV);
     console.log(err);
 });
 // app.listen(3000,()=>console.log("connected"))

@@ -24,9 +24,7 @@ mongoose.set("useFindAndModify", false);
 
 app.use(route);
 
-if (process.env.NODE_ENV == "production") {
-  app.use(express.static("../../../frontend/build"));
-}
+
 
 mongoose
   .connect(URI, options)
@@ -34,12 +32,6 @@ mongoose
     app.listen(PORT, () => console.log(`server lets see hosted on ${PORT}`))
   )
   .catch((err) => {
-    console.log(
-      process.env.MONGODB_URI,
-      process.env.AWS_ACCESS_KEY_ID,
-      process.env.AWS_SECRET_ACCESS_KEY,
-      process.env.NODE_ENV
-    );
     console.log(err);
   });
 
