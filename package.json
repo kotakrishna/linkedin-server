@@ -4,9 +4,8 @@
   "description": "",
   "main": "dist/js/app.js",
   "scripts": {
-    "build": "tsc",
     "start": "set NODE_ENV=development &&  node dist/js/app.js",
-    "start-prod": "set NODE_ENV=production&& node dist/js/app.js"
+    "start-prod": "set NODE_ENV=production && node dist/js/app.js"
   },
   "keywords": [],
   "author": "",
