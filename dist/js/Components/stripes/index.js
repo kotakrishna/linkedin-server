@@ -49,8 +49,8 @@ const paymentWithCard = (req, res) => __awaiter(void 0, void 0, void 0, function
                 },
             ],
             mode: "payment",
-            success_url: `http://localhost:3000/payment-page?success=true`,
-            cancel_url: `http://localhost:3000/payment-page?canceled=true`,
+            success_url: `https://linkedinlearningclone-kotakrishna.vercel.app/payment-page?success=true`,
+            cancel_url: `https://linkedinlearningclone-kotakrishna.vercel.app/payment-page?canceled=true`,
         });
         // console.log(session);
         res.status(200).json({ id: session.id, client_secret: session });
