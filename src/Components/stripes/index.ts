@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 
 const stripe = require("stripe")(
   process.env.STRIPE_SECRET ||
-    "sk_test_51J2X8bSGjIO6Ns88v8UYRI4p75X5f9hAChn7LsvEBEunkXg5eCehRHytZ6PiWpkcCoIP9a5xQbczexcTcjekx9LU00Z8TcyT1I"
+  "sk_test_51J2X8bSGjIO6Ns88v8UYRI4p75X5f9hAChn7LsvEBEunkXg5eCehRHytZ6PiWpkcCoIP9a5xQbczexcTcjekx9LU00Z8TcyT1I"
 );
 
 export const checkStatus = async (req: Request, res: Response) => {
@@ -43,9 +43,9 @@ export const paymentWithCard = async (req: Request, res: Response) => {
       ],
       mode: "payment",
 
-      success_url: `http://localhost:3000/payment-page?success=true`,
+      success_url: `https://linkedinlearningclone-kotakrishna.vercel.app/payment-page?success=true`,
 
-      cancel_url: `http://localhost:3000/payment-page?canceled=true`,
+      cancel_url: `https://linkedinlearningclone-kotakrishna.vercel.app/payment-page?canceled=true`,
     });
 
     // console.log(session);
