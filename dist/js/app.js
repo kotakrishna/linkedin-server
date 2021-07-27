@@ -13,8 +13,11 @@ const app = express_1.default();
 // const fs= require('fs');
 const PORT = process.env.PORT || 5000;
 // console.log(teachers)
+app.get("/", (req, res) => {
+    res.send("welcome");
+});
 // const uris="mongodb+srv://vedansh:vedansh@coursera.03cjh.mongodb.net/coursera?retryWrites=true&w=majority"
-const URI = process.env.MONGODB_URI || "";
+const URI = process.env.MONGODB_URI || "mongodb+srv://linkdenlearning:linkdenLearningDB@cluster0.ldxhc.mongodb.net/linkdenVideos?retryWrites=true&w=majority";
 app.use(express_1.default.json());
 app.use(cors_1.default());
 app.use(bodyParser.urlencoded({ extended: false }));
